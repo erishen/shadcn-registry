@@ -24,8 +24,10 @@ Visit the [shadcn documentation](https://ui.shadcn.com/docs/registry) to view th
 
 ## Command
 
-- pnpm registry:build
 - pnpm dev
+- pnpm registry:build
+- pnpm storybook
+- pnpm build-storybook
 
 ## Install by public/r/[name].json on other projects
 
