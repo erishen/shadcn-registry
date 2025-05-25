@@ -75,6 +75,54 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "demo-with-button",
+      "type": "registry:component",
+      "title": "Demo with Button",
+      "description": "",
+      "files": [
+        {
+          "path": "registry/demo/Button/Button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/demo/Button/Button.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "demo-with-header",
+      "type": "registry:component",
+      "title": "Demo with Header",
+      "description": "",
+      "files": [
+        {
+          "path": "registry/demo/Header/Header.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/demo/Header/Header.css",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "demo-with-page",
+      "type": "registry:component",
+      "title": "Demo with Page",
+      "description": "",
+      "files": [
+        {
+          "path": "registry/demo/Page/Page.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/demo/Page/Page.css",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }

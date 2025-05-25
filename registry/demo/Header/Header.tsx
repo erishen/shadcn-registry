@@ -1,7 +1,9 @@
+'use client';
+
 import React from 'react';
 
-import { Button } from './Button';
-import './header.css';
+import { Button } from '@/registry/demo/Button/Button';
+import './Header.css';
 
 type User = {
   name: string;

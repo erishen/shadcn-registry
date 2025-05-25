@@ -6,6 +6,7 @@ import PokemonPage from "@/registry/new-york/blocks/complex-component/page"
 import { ExampleCard } from "@/registry/new-york/blocks/example-with-css/example-card"
 // This page displays items from the custom registry.
 // You are free to implement this with your own design as needed.
+import { Button } from '@/registry/demo/Button/Button'
 
 export default function Home() {
   return (
@@ -22,11 +23,13 @@ export default function Home() {
             <h2 className="text-sm text-muted-foreground sm:pl-3">
               A simple hello world component
             </h2>
+            <Button label="Test" />
             <OpenInV0Button name="hello-world" className="w-fit" />
           </div>
           <div className="flex items-center justify-center min-h-[400px] relative">
             <HelloWorld />
           </div>
+          
         </div>
 
         <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">

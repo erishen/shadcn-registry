@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
-import { Header } from './Header';
+import { Header } from '../registry/demo/Header/Header';
 
 const meta = {
-  title: 'Example/Header',
+  title: 'Demo/Header',
   component: Header,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
