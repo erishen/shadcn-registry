@@ -135,7 +135,7 @@
           "type": "registry:component"
         },
         {
-          "path": "registry/scss-components/ButtonScss/button-scss.scss",
+          "path": "registry/scss-components/ButtonScss/button-scss.module.scss",
           "type": "registry:component"
         }
       ]

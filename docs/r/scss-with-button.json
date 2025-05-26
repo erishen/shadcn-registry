@@ -7,11 +7,11 @@
   "files": [
     {
       "path": "registry/scss-components/ButtonScss/button-scss.tsx",
-      "content": "import styles from \"./button-scss.module.scss\"\n\nexport const ButtonScss = () => {\n  return (\n    <div>\n      <button className={styles['button-scss']}>Button</button>\n    </div>\n  )\n}",
+      "content": "import \"./button-scss.scss\"\n\nexport const ButtonScss = () => {\n  return (\n    <div>\n      <button className=\"button-scss\">Button</button>\n    </div>\n  )\n}",
       "type": "registry:component"
     },
     {
-      "path": "registry/scss-components/ButtonScss/button-scss.module.scss",
+      "path": "registry/scss-components/ButtonScss/button-scss.scss",
       "content": "@use \"@/styles/variables.scss\" as *;\n@use \"@/styles/mixins.scss\" as *;\n@use \"@/styles/functions.scss\" as *;\n\n.button-scss {\n  padding: $spacing-sm $spacing-md;\n  background-color: $primary-color;\n  color: white;\n  border-radius: 4px;\n  @include transition(background-color);\n\n  &:hover {\n    background-color: color-mix(in srgb, $primary-color 90%, black);\n  }\n\n  @include respond(md) {\n    padding: $spacing-md $spacing-lg;\n  }\n}\n",
       "type": "registry:component"
     }
