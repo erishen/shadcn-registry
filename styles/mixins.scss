@@ -1,0 +1,120 @@
+@use "./variables.scss" as *;
+
+// 快速响应式断点
+@mixin respond($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) { @content; }
+  } @else if $breakpoint == md {
+    @media (min-width: $breakpoint-md) { @content; }
+  } @else if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) { @content; }
+  } @else if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) { @content; }
+  }
+}
+
+// 清除浮动
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// 文本溢出省略号
+@mixin ellipsis($lines: 1) {
+  @if $lines == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+// 居中（flex）
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 统一 transition
+@mixin transition($props: all, $duration: 0.3s, $timing: ease-in-out) {
+  transition: $props $duration $timing;
+}
+
+// 统一动画
+@mixin animation($name, $duration: 0.3s, $timing: ease-in-out, $delay: 0s, $iteration: 1, $direction: normal, $fill: forwards) {
+  animation: $name $duration $timing $delay $iteration $direction $fill;
+}
+
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@mixin flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin flex-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column-between {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-column-around {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@mixin flex-column-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin flex-column-end {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}

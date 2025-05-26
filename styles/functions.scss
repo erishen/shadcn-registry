@@ -1,0 +1,16 @@
+@use "./variables.scss" as *;
+
+// px 转 rem
+@function rem($px, $base: 16) {
+  @return ($px / $base) * 1rem;
+}
+
+// 设置透明度颜色
+@function rgba-color($color, $alpha) {
+  @return rgba(red($color), green($color), blue($color), $alpha);
+}
+
+// 获取颜色亮度（适合用于是否使用浅色/深色文字的判断）
+@function luminance($color) {
+  @return (0.299 * red($color) + 0.587 * green($color) + 0.114 * blue($color)) / 255;
+}

@@ -123,6 +123,22 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "scss-with-button",
+      "type": "registry:component",
+      "title": "Scss with Button",
+      "description": "",
+      "files": [
+        {
+          "path": "registry/scss-components/ButtonScss/button-scss.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/scss-components/ButtonScss/button-scss.scss",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }

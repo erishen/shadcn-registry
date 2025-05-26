@@ -7,6 +7,7 @@ import { ExampleCard } from "@/registry/new-york/blocks/example-with-css/example
 // This page displays items from the custom registry.
 // You are free to implement this with your own design as needed.
 import { Button } from '@/registry/demo/Button/Button'
+import { ButtonScss } from '@/registry/scss-components/ButtonScss/button-scss'
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
               A simple hello world component
             </h2>
             <Button label="Test" />
+            <ButtonScss />
             <OpenInV0Button name="hello-world" className="w-fit" />
           </div>
           <div className="flex items-center justify-center min-h-[400px] relative">

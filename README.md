@@ -18,3 +18,4 @@
 - pnpm dlx shadcn@latest add http://localhost:3000/r/demo-with-button.json
 - pnpm dlx shadcn@latest add http://localhost:3000/r/demo-with-header.json
 - pnpm dlx shadcn@latest add http://localhost:3000/r/demo-with-page.json
+- pnpm dlx shadcn@latest add http://localhost:3000/r/scss-with-button.json
