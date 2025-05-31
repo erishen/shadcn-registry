@@ -8,68 +8,30 @@ import { ExampleCard } from "@/registry/new-york/blocks/example-with-css/example
 // You are free to implement this with your own design as needed.
 import { Button } from '@/registry/demo/Button/Button'
 import { ButtonScss } from '@/registry/scss-components/ButtonScss/button-scss'
+import Card from '@/components/Card';
+import ProductCard from '@/components/ProductCard';
+import LeadFormWrapper from '@/components/LeadFormWrapper';
 
 export default function Home() {
   return (
-    <div className="max-w-3xl mx-auto flex flex-col min-h-svh px-4 py-8 gap-8">
-      <header className="flex flex-col gap-1">
-        <h1 className="text-3xl font-bold tracking-tight">Custom Registry</h1>
-        <p className="text-muted-foreground">
-          A custom registry for distributing code using shadcn.
-        </p>
-      </header>
-      <main className="flex flex-col flex-1 gap-8">
-        <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">
-              A simple hello world component
-            </h2>
-            <Button label="Test" />
-            <ButtonScss />
-            <OpenInV0Button name="hello-world" className="w-fit" />
-          </div>
-          <div className="flex items-center justify-center min-h-[400px] relative">
-            <HelloWorld />
-          </div>
-          
-        </div>
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <Card title="Welcome to shadcn-registry">
+        <p>This is a simple card component created for demonstration purposes.</p>
+      </Card>
 
-        <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">
-              A contact form with Zod validation.
-            </h2>
-            <OpenInV0Button name="example-form" className="w-fit" />
-          </div>
-          <div className="flex items-center justify-center min-h-[500px] relative">
-            <ExampleForm />
-          </div>
-        </div>
+      <div className="mt-8">
+        <h2 className="text-2xl font-bold mb-4">Featured Product</h2>
+        <ProductCard
+          name="Wireless Headphones"
+          description="High-quality wireless headphones with noise cancellation."
+          price={99.99}
+        />
+      </div>
 
-        <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">
-              A complex component showing hooks, libs and components.
-            </h2>
-            <OpenInV0Button name="complex-component" className="w-fit" />
-          </div>
-          <div className="flex items-center justify-center min-h-[400px] relative">
-            <PokemonPage />
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">
-              A login form with a CSS file.
-            </h2>
-            <OpenInV0Button name="example-with-css" className="w-fit" />
-          </div>
-          <div className="flex items-center justify-center min-h-[400px] relative">
-            <ExampleCard />
-          </div>
-        </div>
-      </main>
-    </div>
-  )
+      <div className="mt-8 w-full max-w-md">
+        <h2 className="text-2xl font-bold mb-4">Get in Touch</h2>
+        <LeadFormWrapper />
+      </div>
+    </main>
+  );
 }
