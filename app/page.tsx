@@ -1,37 +1,47 @@
-import * as React from "react"
-import { OpenInV0Button } from "@/components/open-in-v0-button"
-import { HelloWorld } from "@/registry/new-york/blocks/hello-world/hello-world"
-import { ExampleForm } from "@/registry/new-york/blocks/example-form/example-form"
-import PokemonPage from "@/registry/new-york/blocks/complex-component/page"
-import { ExampleCard } from "@/registry/new-york/blocks/example-with-css/example-card"
-// This page displays items from the custom registry.
-// You are free to implement this with your own design as needed.
-import { Button } from '@/registry/demo/Button/Button'
-import { ButtonScss } from '@/registry/scss-components/ButtonScss/button-scss'
-import Card from '@/components/Card';
-import ProductCard from '@/components/ProductCard';
-import LeadFormWrapper from '@/components/LeadFormWrapper';
+import ProductCard from "@/components/ProductCard";
+import { Card } from "@/registry/new-york/ui/card";
+import LeadFormWrapper from "@/components/LeadFormWrapper";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Card title="Welcome to shadcn-registry">
-        <p>This is a simple card component created for demonstration purposes.</p>
-      </Card>
-
-      <div className="mt-8">
-        <h2 className="text-2xl font-bold mb-4">Featured Product</h2>
-        <ProductCard
-          name="Wireless Headphones"
-          description="High-quality wireless headphones with noise cancellation."
-          price={99.99}
+    <div className="container mx-auto py-8 px-4">
+      <h1 className="text-3xl font-bold mb-6">Welcome to Shadcn Registry</h1>
+      
+      {/* Product Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <ProductCard 
+          name="Product 1" 
+          description="This is the first product" 
+          price={19.99} 
+        />
+        <ProductCard 
+          name="Product 2" 
+          description="This is the second product" 
+          price={29.99} 
+        />
+        <ProductCard 
+          name="Product 3" 
+          description="This is the third product" 
+          price={39.99} 
         />
       </div>
-
-      <div className="mt-8 w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-4">Get in Touch</h2>
+      
+      {/* Form Section */}
+      <div className="mb-10">
+        <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
         <LeadFormWrapper />
       </div>
-    </main>
+      
+      {/* Card Component Example */}
+      <div>
+        <h2 className="text-2xl font-semibold mb-4">Card Component</h2>
+        <Card className="p-6 max-w-md">
+          <h3 className="text-xl font-medium mb-2">Card Title</h3>
+          <p className="text-gray-600">
+            This is an example of a card component from the registry.
+          </p>
+        </Card>
+      </div>
+    </div>
   );
 }
