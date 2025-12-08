@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.4.2",
+    "@radix-ui/react-label": "^2.1.8",
     "@radix-ui/react-slot": "^1.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -22,7 +23,6 @@
     "react-dom": "19.1.0",
     "react-hook-form": "^7.52.0",
     "tailwind-merge": "^2.3.0",
-    "tailwindcss-animate": "^1.0.7",
     "zod": "^3.23.8"
   },
   "devDependencies": {
@@ -32,9 +32,11 @@
     "@storybook/addon-links": "^8.6.14",
     "@storybook/addon-mdx-gfm": "^8.6.14",
     "@storybook/blocks": "^8.6.14",
+    "@storybook/experimental-addon-test": "^8.6.14",
     "@storybook/nextjs": "^8.6.14",
     "@storybook/react": "^8.6.14",
     "@storybook/test": "^8.6.14",
+    "@tailwindcss/postcss": "^4.1.17",
     "@types/node": "^22.0.0",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.0",
@@ -42,6 +44,8 @@
     "sass": "^1.77.5",
     "storybook": "^8.6.14",
     "tailwindcss": "^4.0.0-alpha.13",
-    "typescript": "^5.5.4"
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.5.4",
+    "vitest": "^4.0.15"
   }
 }
