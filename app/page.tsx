@@ -82,14 +82,15 @@ function ComponentCard({ name, title, description }: ComponentCardProps) {
         
         {/* Preview - only show if available */}
         {["example-form", "complex-component", "example-with-css", "demo-with-page", "styled-button", "data-table"].includes(name) && (
-          <div className="flex-1 p-4 bg-slate-50 rounded-lg border border-slate-200 flex items-center justify-center min-h-[120px]">
+          <div className="flex-1 p-6 bg-slate-50 rounded-lg border border-slate-200 flex items-center justify-center min-h-[200px] overflow-x-auto">
             <ComponentPreview name={name} />
           </div>
         )}
         
         {/* Component Name */}
-        <div className="pt-2">
-          <code className="text-xs bg-slate-100 px-2 py-1 rounded block break-all">
+        <div className="pt-4 border-t">
+          <p className="text-xs text-slate-500 mb-2 font-semibold uppercase tracking-wider">Component Name</p>
+          <code className="text-sm bg-blue-50 text-blue-700 px-3 py-2 rounded block break-all font-mono border border-blue-200">
             {name}
           </code>
         </div>
@@ -188,7 +189,7 @@ export default function Home() {
             <h2 className="text-3xl font-bold mb-2">Advanced Components</h2>
             <p className="text-slate-600">Complex, feature-rich components for advanced use cases</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6">
             {advancedComponents.map((component) => (
               <ComponentCard key={component.name} {...component} />
             ))}
