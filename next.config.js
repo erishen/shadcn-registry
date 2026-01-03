@@ -1,9 +1,8 @@
-import type { NextConfig } from "next";
-
 // 根据环境配置不同的参数
 const isProduction = process.env.NODE_ENV === "production";
 
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   // 仅在生产环境配置 GitHub Pages 子路径
   basePath: isProduction ? "/shadcn-registry" : "",
   // 启用静态导出
@@ -16,4 +15,4 @@ const nextConfig: NextConfig = {
   assetPrefix: isProduction ? "/shadcn-registry/" : "",
 };
 
-export default nextConfig;
+module.exports = nextConfig;
