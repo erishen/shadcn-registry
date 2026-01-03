@@ -1,45 +1,159 @@
-import ProductCard from "@/components/ProductCard";
-import { Card } from "@/registry/new-york/ui/card";
-import LeadFormWrapper from "@/components/LeadFormWrapper";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/registry/new-york/ui/card";
+import { Button } from "@/registry/new-york/ui/button";
+
+const components = [
+  {
+    name: "hello-world",
+    title: "Hello World",
+    description: "A simple hello world component",
+    tags: ["basic", "button"]
+  },
+  {
+    name: "example-form",
+    title: "Example Form",
+    description: "A contact form with Zod validation",
+    tags: ["form", "validation"]
+  },
+  {
+    name: "complex-component",
+    title: "Complex Component",
+    description: "A complex component showing hooks, libs and components",
+    tags: ["advanced", "hooks"]
+  },
+  {
+    name: "example-with-css",
+    title: "Example with CSS",
+    description: "A login form with custom CSS styling",
+    tags: ["css", "form"]
+  },
+  {
+    name: "demo-with-button",
+    title: "Demo with Button",
+    description: "Button component demo with styling",
+    tags: ["button", "demo"]
+  },
+  {
+    name: "demo-with-header",
+    title: "Demo with Header",
+    description: "Header component demo",
+    tags: ["header", "demo"]
+  },
+  {
+    name: "demo-with-page",
+    title: "Demo with Page",
+    description: "Full page layout demo",
+    tags: ["layout", "demo"]
+  },
+  {
+    name: "scss-with-button",
+    title: "SCSS with Button",
+    description: "Button component with SCSS styling",
+    tags: ["scss", "button"]
+  }
+];
 
 export default function Home() {
   return (
-    <div className="container mx-auto py-8 px-4">
-      <h1 className="text-3xl font-bold mb-6">Welcome to Shadcn Registry</h1>
-      
-      {/* Product Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-        <ProductCard 
-          name="Product 1" 
-          description="This is the first product" 
-          price={19.99} 
-        />
-        <ProductCard 
-          name="Product 2" 
-          description="This is the second product" 
-          price={29.99} 
-        />
-        <ProductCard 
-          name="Product 3" 
-          description="This is the third product" 
-          price={39.99} 
-        />
-      </div>
-      
-      {/* Form Section */}
-      <div className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
-        <LeadFormWrapper />
-      </div>
-      
-      {/* Card Component Example */}
-      <div>
-        <h2 className="text-2xl font-semibold mb-4">Card Component</h2>
-        <Card className="p-6 max-w-md">
-          <h3 className="text-xl font-medium mb-2">Card Title</h3>
-          <p className="text-gray-600">
-            This is an example of a card component from the registry.
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      {/* Hero Section */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="text-center mb-12">
+          <h1 className="text-5xl font-bold mb-4">Shadcn Registry</h1>
+          <p className="text-xl text-slate-600 mb-8">
+            A custom component registry for shadcn/ui. Browse, install, and use reusable React components.
           </p>
+          <div className="flex gap-4 justify-center">
+            <Button asChild>
+              <a href="#components">Browse Components</a>
+            </Button>
+            <Button variant="outline" asChild>
+              <a href="#installation">Installation Guide</a>
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      {/* Installation Section */}
+      <div id="installation" className="container mx-auto px-4 py-12 bg-slate-900 text-white rounded-lg mb-16">
+        <h2 className="text-3xl font-bold mb-6">Quick Start</h2>
+        <div className="space-y-4">
+          <div>
+            <p className="text-sm text-slate-400 mb-2">Install from this registry:</p>
+            <div className="bg-slate-800 p-4 rounded font-mono text-sm overflow-x-auto">
+              pnpm dlx shadcn@latest add https://erishen.github.io/shadcn-registry/r/[component-name].json
+            </div>
+          </div>
+          <div>
+            <p className="text-sm text-slate-400 mb-2">Or for local development:</p>
+            <div className="bg-slate-800 p-4 rounded font-mono text-sm overflow-x-auto">
+              pnpm dlx shadcn@latest add http://localhost:3000/r/[component-name].json
+            </div>
+          </div>
+          <p className="text-sm text-slate-300 mt-4">
+            Replace <code className="bg-slate-800 px-2 py-1 rounded">[component-name]</code> with the component name from the list below.
+          </p>
+        </div>
+      </div>
+
+      {/* Components Grid */}
+      <div id="components" className="container mx-auto px-4 py-12">
+        <h2 className="text-3xl font-bold mb-8">Available Components</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {components.map((component) => (
+            <Card key={component.name} className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <CardTitle className="text-lg">{component.title}</CardTitle>
+                <CardDescription className="text-sm">{component.name}</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-sm text-slate-600">{component.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {component.tags.map((tag) => (
+                    <span key={tag} className="inline-block text-xs bg-slate-200 text-slate-700 px-2 py-1 rounded">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="pt-2">
+                  <code className="text-xs bg-slate-100 px-2 py-1 rounded block break-all">
+                    {component.name}
+                  </code>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+
+      {/* Documentation Section */}
+      <div className="container mx-auto px-4 py-12 mt-8">
+        <Card>
+          <CardHeader>
+            <CardTitle>Documentation</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h3 className="font-semibold mb-2">View Component Stories</h3>
+              <p className="text-sm text-slate-600 mb-3">
+                Check out the Storybook documentation to see component examples and usage patterns.
+              </p>
+              <Button variant="outline" asChild>
+                <a href="./storybook/" target="_blank" rel="noopener noreferrer">
+                  Open Storybook →
+                </a>
+              </Button>
+            </div>
+            <div className="pt-4 border-t">
+              <h3 className="font-semibold mb-2">Learn More</h3>
+              <p className="text-sm text-slate-600">
+                For more information about shadcn/ui and how to use this registry, visit the{" "}
+                <a href="https://ui.shadcn.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                  shadcn/ui documentation
+                </a>
+                .
+              </p>
+            </div>
+          </CardContent>
         </Card>
       </div>
     </div>
