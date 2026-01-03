@@ -2,7 +2,8 @@
 
 import { Button } from "@/registry/new-york/ui/button";
 import { StyledButton } from "./StyledButton";
-import { DataTable, Column } from "./DataTable";
+import { DataTable } from "./DataTable";
+import type { Column } from "./DataTable";
 
 interface ComponentPreviewProps {
   name: string;
