@@ -152,6 +152,19 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "data-table",
+      "type": "registry:component",
+      "title": "Data Table",
+      "description": "A feature-rich data table component with sorting, filtering, and pagination",
+      "registryDependencies": ["button", "input"],
+      "files": [
+        {
+          "path": "components/data-table.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }

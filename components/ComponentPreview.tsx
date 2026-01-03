@@ -2,10 +2,30 @@
 
 import { Button } from "@/registry/new-york/ui/button";
 import { StyledButton } from "./StyledButton";
+import { DataTable, Column } from "./DataTable";
 
 interface ComponentPreviewProps {
   name: string;
 }
+
+interface SampleUser {
+  id: string;
+  name: string;
+  email: string;
+  role: string;
+}
+
+const sampleUsers: SampleUser[] = [
+  { id: '1', name: 'Alice Johnson', email: 'alice@example.com', role: 'Admin' },
+  { id: '2', name: 'Bob Smith', email: 'bob@example.com', role: 'User' },
+  { id: '3', name: 'Carol White', email: 'carol@example.com', role: 'Editor' },
+];
+
+const userColumns: Column<SampleUser>[] = [
+  { key: 'name', label: 'Name', sortable: true, filterable: true },
+  { key: 'email', label: 'Email', sortable: true },
+  { key: 'role', label: 'Role', sortable: true },
+];
 
 export function ComponentPreview({ name }: ComponentPreviewProps) {
   switch (name) {
@@ -62,6 +82,13 @@ export function ComponentPreview({ name }: ComponentPreviewProps) {
         <div className="flex gap-2">
           <StyledButton>Styled Button</StyledButton>
           <StyledButton disabled>Disabled</StyledButton>
+        </div>
+      );
+    
+    case "data-table":
+      return (
+        <div className="w-full">
+          <DataTable data={sampleUsers} columns={userColumns} pageSize={3} />
         </div>
       );
     

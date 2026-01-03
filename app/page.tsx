@@ -56,6 +56,14 @@ const styledComponentsComponents = [
   },
 ];
 
+const advancedComponents = [
+  {
+    name: "data-table",
+    title: "Data Table",
+    description: "Feature-rich data table with sorting, filtering, and pagination",
+  },
+];
+
 interface ComponentCardProps {
   name: string;
   title: string;
@@ -73,7 +81,7 @@ function ComponentCard({ name, title, description }: ComponentCardProps) {
         <p className="text-sm text-slate-600">{description}</p>
         
         {/* Preview - only show if available */}
-        {["example-form", "complex-component", "example-with-css", "demo-with-page", "styled-button"].includes(name) && (
+        {["example-form", "complex-component", "example-with-css", "demo-with-page", "styled-button", "data-table"].includes(name) && (
           <div className="flex-1 p-4 bg-slate-50 rounded-lg border border-slate-200 flex items-center justify-center min-h-[120px]">
             <ComponentPreview name={name} />
           </div>
@@ -169,6 +177,19 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {styledComponentsComponents.map((component) => (
+              <ComponentCard key={component.name} {...component} />
+            ))}
+          </div>
+        </div>
+
+        {/* Advanced Components */}
+        <div className="mb-16">
+          <div className="mb-8">
+            <h2 className="text-3xl font-bold mb-2">Advanced Components</h2>
+            <p className="text-slate-600">Complex, feature-rich components for advanced use cases</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {advancedComponents.map((component) => (
               <ComponentCard key={component.name} {...component} />
             ))}
           </div>

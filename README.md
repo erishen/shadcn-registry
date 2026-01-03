@@ -88,6 +88,7 @@ pnpm dlx shadcn@latest add http://localhost:3000/r/[component-name].json
 | Demo with Page | `demo-with-page` | Full page layout demo |
 | SCSS with Button | `scss-with-button` | Button component with SCSS styling |
 | Styled Button | `styled-button` | Button component with styled-components |
+| Data Table | `data-table` | Feature-rich data table with sorting, filtering, and pagination |
 
 ### Example Installation
 
