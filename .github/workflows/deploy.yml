@@ -21,30 +21,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 安装 pnpm
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+      # 安装 Bun
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v1
         with:
-          version: 8
-
-      # 设置 Node.js 环境
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'pnpm'
+          bun-version: latest
 
       # 安装依赖
       - name: Install dependencies
-        run: pnpm install
+        run: bun install
 
       # 构建 Next.js 项目
       - name: Build Next.js project
-        run: pnpm run build
+        run: bun run prod
 
       # 构建 Storybook
       - name: Build Storybook
-        run: pnpm run build-storybook
+        run: bun run build-storybook
 
       # 合并构建产物
       - name: Merge build outputs

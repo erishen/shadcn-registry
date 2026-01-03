@@ -20,36 +20,35 @@ A custom component registry for [shadcn/ui](https://ui.shadcn.com/), built with 
 
 ### Prerequisites
 
-- Node.js 20+
-- pnpm 8+
+- Bun 1.3+
 
 ### Installation
 
 ```bash
-pnpm install
+bun install
 ```
 
 ### Development
 
 ```bash
 # Start development server (http://localhost:3000)
-pnpm dev
+bun dev
 
 # Start Storybook (http://localhost:6006)
-pnpm storybook
+bun run storybook
 ```
 
 ### Build
 
 ```bash
 # Build Next.js project
-pnpm build
+bun run prod
 
 # Build Storybook documentation
-pnpm build-storybook
+bun run build-storybook
 
 # Deploy to GitHub Pages
-pnpm deploy
+bun run deploy
 ```
 
 ## Using Components from Registry
@@ -121,13 +120,13 @@ shadcn-registry/
 
 | Command | Description |
 |---------|-------------|
-| `pnpm dev` | Start development server |
-| `pnpm build` | Build Next.js project |
-| `pnpm start` | Start production server |
-| `pnpm lint` | Run ESLint |
-| `pnpm storybook` | Start Storybook dev server |
-| `pnpm build-storybook` | Build Storybook static site |
-| `pnpm deploy` | Build and prepare for GitHub Pages deployment |
+| `bun dev` | Start development server |
+| `bun run prod` | Build Next.js project |
+| `bun start` | Start production server |
+| `bun run lint` | Run ESLint |
+| `bun run storybook` | Start Storybook dev server |
+| `bun run build-storybook` | Build Storybook static site |
+| `bun run deploy` | Build and prepare for GitHub Pages deployment |
 
 ## Technologies
 

@@ -6,14 +6,12 @@
 
 ### 1. Next.js 配置更新
 
-在 `next.config.ts` 中添加了 GitHub Pages 支持：
+在 `next.config.js` 中添加了 GitHub Pages 支持：
 
-```typescript
-import type { NextConfig } from "next";
-
+```javascript
 const isProduction = process.env.NODE_ENV === "production";
 
-const nextConfig: NextConfig = {
+const nextConfig = {
   basePath: isProduction ? "/shadcn-registry" : "",
   output: "export",
   images: {
@@ -22,7 +20,7 @@ const nextConfig: NextConfig = {
   assetPrefix: isProduction ? "/shadcn-registry/" : "",
 };
 
-export default nextConfig;
+module.exports = nextConfig;
 ```
 
 ### 2. Storybook 配置
@@ -34,6 +32,7 @@ Storybook 配置在 `.storybook/main.ts` 中，构建输出到 `docs/` 目录。
 创建了 `.github/workflows/deploy.yml` 文件，用于自动部署：
 
 - 当推送到 `main` 分支时触发
+- 使用 Bun 安装依赖和构建
 - 构建 Next.js 项目（输出到 `out/`）
 - 构建 Storybook（输出到 `docs/`）
 - 将 Storybook 复制到 `out/storybook/`
@@ -43,13 +42,13 @@ Storybook 配置在 `.storybook/main.ts` 中，构建输出到 `docs/` 目录。
 
 ```json
 "scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "start": "next start",
-  "lint": "next lint",
+  "dev": "bun next dev",
+  "prod": "bun next build",
+  "start": "bun next start",
+  "lint": "bun next lint",
   "storybook": "storybook dev -p 6006",
   "build-storybook": "storybook build -o docs",
-  "deploy": "next build && touch out/.nojekyll"
+  "deploy": "bun next build && touch out/.nojekyll"
 }
 ```
 
@@ -67,22 +66,23 @@ Storybook 配置在 `.storybook/main.ts` 中，构建输出到 `docs/` 目录。
 1. 将代码推送到 `main` 分支：
    ```bash
    git add .
-   git commit -m "Add deployment configuration"
+   git commit -m "Update deployment configuration"
    git push origin main
    ```
 
 2. GitHub Actions 将自动：
+   - 使用 Bun 安装依赖
    - 构建 Next.js 项目
    - 构建 Storybook
    - 部署到 `https://erishen.github.io/shadcn-registry/`
    - Storybook 可访问：`https://erishen.github.io/shadcn-registry/storybook/`
 
-### 3. 手动部署
+### 3. 本地构建和部署
 
 1. 构建项目：
    ```bash
-   pnpm run build
-   pnpm run build-storybook
+   bun run prod
+   bun run build-storybook
    ```
 
 2. 合并输出：
@@ -145,6 +145,27 @@ https://erishen.github.io/shadcn-registry/
 ### 4. Storybook 无法访问
 
 确保：
-- `pnpm run build-storybook` 成功执行
+- `bun run build-storybook` 成功执行
 - `docs/` 目录存在且包含构建产物
 - workflow 中的合并步骤正确执行
+
+## 使用 Bun
+
+项目现在使用 Bun 作为包管理器和任务运行器：
+
+```bash
+# 安装依赖
+bun install
+
+# 开发
+bun dev
+
+# 构建
+bun run prod
+
+# Storybook
+bun run storybook
+bun run build-storybook
+```
+
+Bun 比 npm/pnpm 更快，完全兼容 Node.js 生态。
