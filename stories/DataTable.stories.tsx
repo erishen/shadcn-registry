@@ -29,7 +29,7 @@ const columns: Column<User>[] = [
     key: 'status',
     label: 'Status',
     sortable: true,
-    render: (value) => (
+    render: (value: string) => (
       <span className={`inline-flex px-2 py-1 rounded text-xs font-semibold ${
         value === 'active' 
           ? 'bg-green-100 text-green-800' 
@@ -41,6 +41,8 @@ const columns: Column<User>[] = [
   },
 ];
 
+type DataTableStory = StoryObj<typeof DataTable<User>>;
+
 const meta = {
   title: 'Components/DataTable',
   component: DataTable,
@@ -51,9 +53,8 @@ const meta = {
 } satisfies Meta<typeof DataTable>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Default: DataTableStory = {
   args: {
     data: sampleData,
     columns,
@@ -61,16 +62,16 @@ export const Default: Story = {
   },
 };
 
-export const WithRowClick: Story = {
+export const WithRowClick: DataTableStory = {
   args: {
     data: sampleData,
     columns,
     pageSize: 5,
-    onRowClick: (row) => alert(`Clicked: ${row.name}`),
+    onRowClick: (row: User) => alert(`Clicked: ${row.name}`),
   },
 };
 
-export const SmallDataset: Story = {
+export const SmallDataset: DataTableStory = {
   args: {
     data: sampleData.slice(0, 3),
     columns,

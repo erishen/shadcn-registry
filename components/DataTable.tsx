@@ -12,7 +12,7 @@ export interface Column<T> {
   render?: (value: T[keyof T], row: T) => React.ReactNode;
 }
 
-export interface DataTableProps<T> {
+export interface DataTableProps<T extends Record<string, any>> {
   data: T[];
   columns: Column<T>[];
   pageSize?: number;
@@ -21,7 +21,7 @@ export interface DataTableProps<T> {
 
 type SortDirection = 'asc' | 'desc' | null;
 
-export function DataTable<T extends { id: string | number }>({
+export function DataTable<T extends Record<string, any>>({
   data,
   columns,
   pageSize = 10,
