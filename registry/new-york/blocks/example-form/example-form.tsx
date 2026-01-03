@@ -113,7 +113,7 @@ export function ExampleForm() {
             <Input
               id="email"
               name="email"
-              placeholder="leerob@acme.com"
+              placeholder="hello@erishen.cn"
               className="group-data-[invalid=true]/field:border-destructive focus-visible:group-data-[invalid=true]/field:ring-destructive"
               disabled={pending}
               aria-invalid={!!state.errors?.email}
