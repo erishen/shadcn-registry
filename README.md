@@ -8,11 +8,11 @@ A custom component registry for [shadcn/ui](https://ui.shadcn.com/), built with 
 
 ## Features
 
-- Built with Next.js 15 and React 19
-- Component documentation with Storybook
+- Built with Next.js 14 and React 18
+- Component documentation with Storybook 9
 - Custom component registry for shadcn/ui
 - TypeScript support
-- Tailwind CSS styling
+- Tailwind CSS and styled-components styling
 - Form validation with React Hook Form and Zod
 - Radix UI components integration
 
@@ -88,6 +88,7 @@ pnpm dlx shadcn@latest add http://localhost:3000/r/[component-name].json
 | Demo with Header | `demo-with-header` | Header component demo |
 | Demo with Page | `demo-with-page` | Full page layout demo |
 | SCSS with Button | `scss-with-button` | Button component with SCSS styling |
+| Styled Button | `styled-button` | Button component with styled-components |
 
 ### Example Installation
 
@@ -105,15 +106,15 @@ After installation, the components will be added to your project's component dir
 
 ```
 shadcn-registry/
-├── src/
-│   ├── app/              # Next.js app directory
-│   ├── components/       # React components
-│   ├── lib/             # Utility functions
-│   └── stories/         # Storybook stories
+├── app/                 # Next.js app directory
+├── components/          # React components
+├── registry/            # Component registry definitions
+├── stories/             # Storybook stories
 ├── public/
 │   └── r/               # Component registry JSON files
 ├── .storybook/          # Storybook configuration
-└── docs/                # Built Storybook output
+├── docs/                # Built Storybook output (generated)
+└── out/                 # Built Next.js output (generated)
 ```
 
 ## Scripts
@@ -130,12 +131,12 @@ shadcn-registry/
 
 ## Technologies
 
-- **Framework:** Next.js 15
-- **UI Library:** React 19
+- **Framework:** Next.js 14
+- **UI Library:** React 18
 - **Component Library:** shadcn/ui, Radix UI
-- **Styling:** Tailwind CSS, SCSS
+- **Styling:** Tailwind CSS, SCSS, styled-components
 - **Forms:** React Hook Form, Zod
-- **Documentation:** Storybook
+- **Documentation:** Storybook 9
 - **Language:** TypeScript
 
 ## Deployment

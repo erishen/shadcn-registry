@@ -1,66 +1,104 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/registry/new-york/ui/card";
 import { Button } from "@/registry/new-york/ui/button";
+import { ComponentPreview } from "@/components/ComponentPreview";
 
-const components = [
+const tailwindComponents = [
   {
     name: "hello-world",
     title: "Hello World",
     description: "A simple hello world component",
-    tags: ["basic", "button"]
   },
   {
     name: "example-form",
     title: "Example Form",
     description: "A contact form with Zod validation",
-    tags: ["form", "validation"]
   },
   {
     name: "complex-component",
     title: "Complex Component",
-    description: "A complex component showing hooks, libs and components",
-    tags: ["advanced", "hooks"]
+    description: "Advanced component with hooks and utilities",
   },
   {
     name: "example-with-css",
     title: "Example with CSS",
-    description: "A login form with custom CSS styling",
-    tags: ["css", "form"]
+    description: "Login form with custom CSS styling",
   },
   {
     name: "demo-with-button",
     title: "Demo with Button",
-    description: "Button component demo with styling",
-    tags: ["button", "demo"]
+    description: "Button component demo",
   },
   {
     name: "demo-with-header",
     title: "Demo with Header",
     description: "Header component demo",
-    tags: ["header", "demo"]
   },
   {
     name: "demo-with-page",
     title: "Demo with Page",
     description: "Full page layout demo",
-    tags: ["layout", "demo"]
   },
+];
+
+const scssComponents = [
   {
     name: "scss-with-button",
     title: "SCSS with Button",
     description: "Button component with SCSS styling",
-    tags: ["scss", "button"]
-  }
+  },
 ];
+
+const styledComponentsComponents = [
+  {
+    name: "styled-button",
+    title: "Styled Button",
+    description: "Button component with styled-components",
+  },
+];
+
+interface ComponentCardProps {
+  name: string;
+  title: string;
+  description: string;
+}
+
+function ComponentCard({ name, title, description }: ComponentCardProps) {
+  return (
+    <Card className="hover:shadow-lg transition-shadow flex flex-col">
+      <CardHeader>
+        <CardTitle className="text-lg">{title}</CardTitle>
+        <CardDescription className="text-sm">{name}</CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-4 flex-1 flex flex-col">
+        <p className="text-sm text-slate-600">{description}</p>
+        
+        {/* Preview - only show if available */}
+        {["example-form", "complex-component", "example-with-css", "demo-with-page", "styled-button"].includes(name) && (
+          <div className="flex-1 p-4 bg-slate-50 rounded-lg border border-slate-200 flex items-center justify-center min-h-[120px]">
+            <ComponentPreview name={name} />
+          </div>
+        )}
+        
+        {/* Component Name */}
+        <div className="pt-2">
+          <code className="text-xs bg-slate-100 px-2 py-1 rounded block break-all">
+            {name}
+          </code>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen bg-linear-to-b from-slate-50 to-white">
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold mb-4">Shadcn Registry</h1>
           <p className="text-xl text-slate-600 mb-8">
-            A custom component registry for shadcn/ui. Browse, install, and use reusable React components.
+            A custom component registry for shadcn/ui. Browse, install, and use reusable React components with multiple styling approaches.
           </p>
           <div className="flex gap-4 justify-center">
             <Button asChild>
@@ -97,31 +135,43 @@ export default function Home() {
 
       {/* Components Grid */}
       <div id="components" className="container mx-auto px-4 py-12">
-        <h2 className="text-3xl font-bold mb-8">Available Components</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {components.map((component) => (
-            <Card key={component.name} className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="text-lg">{component.title}</CardTitle>
-                <CardDescription className="text-sm">{component.name}</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-sm text-slate-600">{component.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {component.tags.map((tag) => (
-                    <span key={tag} className="inline-block text-xs bg-slate-200 text-slate-700 px-2 py-1 rounded">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <div className="pt-2">
-                  <code className="text-xs bg-slate-100 px-2 py-1 rounded block break-all">
-                    {component.name}
-                  </code>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+        {/* Tailwind CSS Components */}
+        <div className="mb-16">
+          <div className="mb-8">
+            <h2 className="text-3xl font-bold mb-2">Tailwind CSS Components</h2>
+            <p className="text-slate-600">Components styled with Tailwind CSS utility classes</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {tailwindComponents.map((component) => (
+              <ComponentCard key={component.name} {...component} />
+            ))}
+          </div>
+        </div>
+
+        {/* SCSS Components */}
+        <div className="mb-16">
+          <div className="mb-8">
+            <h2 className="text-3xl font-bold mb-2">SCSS Components</h2>
+            <p className="text-slate-600">Components styled with SCSS modules and stylesheets</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {scssComponents.map((component) => (
+              <ComponentCard key={component.name} {...component} />
+            ))}
+          </div>
+        </div>
+
+        {/* Styled Components */}
+        <div className="mb-16">
+          <div className="mb-8">
+            <h2 className="text-3xl font-bold mb-2">Styled Components</h2>
+            <p className="text-slate-600">Components built with styled-components library</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {styledComponentsComponents.map((component) => (
+              <ComponentCard key={component.name} {...component} />
+            ))}
+          </div>
         </div>
       </div>
 

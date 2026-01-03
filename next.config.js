@@ -13,6 +13,10 @@ const nextConfig = {
   },
   // 仅在生产环境配置 assetPrefix
   assetPrefix: isProduction ? "/shadcn-registry/" : "",
+  // styled-components 配置
+  compiler: {
+    styledComponents: true,
+  },
 };
 
 module.exports = nextConfig;

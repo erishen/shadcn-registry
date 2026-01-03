@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "styled-button",
+  "type": "registry:component",
+  "title": "Styled Button",
+  "description": "A button component built with styled-components",
+  "dependencies": [
+    "styled-components"
+  ],
+  "files": [
+    {
+      "path": "components/styled-button.tsx",
+      "content": "'use client';\n\nimport styled from 'styled-components';\n\nconst StyledButtonWrapper = styled.button`\n  padding: 10px 20px;\n  font-size: 16px;\n  font-weight: 600;\n  border: none;\n  border-radius: 6px;\n  cursor: pointer;\n  transition: all 0.3s ease;\n  \n  background-color: #000;\n  color: #fff;\n  \n  &:hover {\n    background-color: #333;\n    transform: translateY(-2px);\n    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);\n  }\n  \n  &:active {\n    transform: translateY(0);\n  }\n  \n  &:disabled {\n    background-color: #ccc;\n    cursor: not-allowed;\n    transform: none;\n  }\n`;\n\ninterface StyledButtonProps {\n  children: React.ReactNode;\n  onClick?: () => void;\n  disabled?: boolean;\n}\n\nexport const StyledButton: React.FC<StyledButtonProps> = ({\n  children,\n  onClick,\n  disabled = false,\n}) => {\n  return (\n    <StyledButtonWrapper onClick={onClick} disabled={disabled}>\n      {children}\n    </StyledButtonWrapper>\n  );\n};\n",
+      "type": "registry:component"
+    }
+  ]
+}

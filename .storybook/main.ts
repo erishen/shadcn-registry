@@ -18,6 +18,16 @@ const config: StorybookConfig = {
   ],
   "core": {
     "disableTelemetry": true
+  },
+  "webpackFinal": async (config: any) => {
+    // 确保 styled-components 正确处理
+    if (config.resolve) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        "styled-components": require.resolve("styled-components"),
+      };
+    }
+    return config;
   }
 };
 export default config;

@@ -139,6 +139,19 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "styled-button",
+      "type": "registry:component",
+      "title": "Styled Button",
+      "description": "A button component built with styled-components",
+      "dependencies": ["styled-components"],
+      "files": [
+        {
+          "path": "registry/styled-components/styled-button/styled-button.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }
