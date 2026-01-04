@@ -145,6 +145,7 @@ shadcn-registry/
 
 - **掘金：** [🚀 重新定义前端组件安装体验：shadcn + Bun 的极致开发效率](https://juejin.cn/post/7591309945510821888)
 - **SegmentFault：** [解决前端开发效率问题：shadcn + Bun 带来的组件安装革命](https://segmentfault.com/a/1190000047521280)
+- **Medium：** [Building a Modern Component Library: The Frontend Development Revolution with shadcn + Bun](https://medium.com/@leisun8309/building-a-modern-component-library-the-frontend-development-revolution-with-shadcn-bun-9ec6e6e418f7)
 - **个人博客：** [构建现代化组件库：shadcn + Bun 前端开发革命](https://erishen.cn/?p=192)
 
 ### Key Topics Covered
