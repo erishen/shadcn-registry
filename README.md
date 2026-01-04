@@ -139,6 +139,22 @@ shadcn-registry/
 - **Documentation:** Storybook 9
 - **Language:** TypeScript
 
+## Articles & Resources
+
+### Related Articles
+
+- **掘金：** [🚀 重新定义前端组件安装体验：shadcn + Bun 的极致开发效率](https://juejin.cn/post/7591309945510821888)
+- **SegmentFault：** [解决前端开发效率问题：shadcn + Bun 带来的组件安装革命](https://segmentfault.com/a/1190000047521280)
+- **个人博客：** [构建现代化组件库：shadcn + Bun 前端开发革命](https://erishen.cn/?p=192)
+
+### Key Topics Covered
+
+- **"Copy and paste, not install"** philosophy
+- **Bun** performance optimization (21x faster than npm)
+- **Component registry** architecture
+- **TypeScript** integration best practices
+- **Modern development** workflow
+
 ## Deployment
 
 This project is automatically deployed to GitHub Pages on every push to the `main` branch using GitHub Actions.
