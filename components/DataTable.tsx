@@ -109,7 +109,7 @@ export function DataTable<T extends Record<string, any>>({
       {/* 表格容器 */}
       <div className="w-full border border-slate-200 rounded-xl overflow-hidden shadow-sm bg-white mx-6">
         <table className="w-full border-collapse">
-          <thead className="bg-gradient-to-r from-slate-50 to-slate-100 border-b-2 border-slate-200">
+          <thead className="bg-linear-to-r from-slate-50 to-slate-100 border-b-2 border-slate-200">
             <tr>
               {columns.map((col) => (
                 <th
@@ -151,7 +151,7 @@ export function DataTable<T extends Record<string, any>>({
                 <tr
                   key={row.id}
                   onClick={() => onRowClick?.(row)}
-                  className={`border-b border-slate-100 hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 cursor-pointer ${idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}`}
+                  className={`border-b border-slate-100 hover:bg-linear-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 cursor-pointer ${idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}`}
                 >
                   {columns.map((col) => (
                     <td
@@ -177,7 +177,7 @@ export function DataTable<T extends Record<string, any>>({
           <span className="font-semibold text-slate-900">{Math.min(currentPage * pageSize, sortedData.length)}</span> 条，共{' '}
           <span className="font-semibold text-slate-900">{sortedData.length}</span> 条
         </div>
-        <div className="flex items-center gap-1 flex-shrink-0">
+        <div className="flex items-center gap-1 shrink-0">
           <Button
             variant="outline"
             size="sm"
