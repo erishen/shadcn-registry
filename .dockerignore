@@ -1,0 +1,27 @@
+node_modules
+npm-debug.log
+.git
+.gitignore
+README.md
+.env
+.env.local
+.env.development
+.env.production
+.next
+.DS_Store
+*.log
+npm-debug.log*
+bun-debug.log*
+bun-error.log*
+yarn-debug.log*
+yarn-error.log*
+pids
+*.pid
+*.seed
+*.pid.lock
+ls -la
+.vscode
+.idea
+*.swp
+*.swo
+*~
