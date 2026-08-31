@@ -164,3 +164,5 @@ This project is automatically deployed to GitHub Pages on every push to the `mai
 ## License
 
 MIT
+
+<div align="center"><a href="README.zh.md">🇨🇳 中文文档</a></div>
