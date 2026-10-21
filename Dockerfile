@@ -23,7 +23,7 @@ RUN apk add --no-cache python3 make g++
 RUN bun run prod
 
 # 生产环境 - 静态文件服务器
-FROM node:20-alpine AS runner
+FROM node:24-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
